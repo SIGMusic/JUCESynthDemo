@@ -27,23 +27,19 @@ public:
     void resized() override;
 
 private:
-  void createSawWavetable();
     //==============================================================================
-//    juce::Random random;
-//    juce::IIRFilter bp_filter;
-//    juce::IIRCoefficients filter_params;
-  const unsigned int tableSize = 1 << 7;
-  juce::AudioSampleBuffer sawTable;
-  WavetableOscillator* osc;
+    juce::Random random;
+    juce::IIRFilter bp_filter;
+    juce::IIRCoefficients filter_params;
 
     juce::Slider levelSlider{juce::Slider::SliderStyle::LinearHorizontal,
                              juce::Slider::TextEntryBoxPosition::TextBoxBelow};
     juce::Slider freqSlider{juce::Slider::SliderStyle::LinearHorizontal,
                             juce::Slider::TextEntryBoxPosition::TextBoxBelow};
     juce::Label freqLabel;
-//    juce::Slider qSlider{juce::Slider::SliderStyle::LinearHorizontal,
-//                            juce::Slider::TextEntryBoxPosition::TextBoxBelow};
-//    juce::Label qLabel;
+    juce::Slider qSlider{juce::Slider::SliderStyle::LinearHorizontal,
+                            juce::Slider::TextEntryBoxPosition::TextBoxBelow};
+    juce::Label qLabel;
     double sample_rate = 48000.0;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
